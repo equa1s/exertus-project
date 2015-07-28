@@ -1,0 +1,11 @@
+.footer-main {
+    height: 100%;
+    width: 100%;
+}
+.footer-inner {
+    width: 100%;
+    margin-top: 100px;
+    height: 340px;
+    background: url("../img/divs/foot_bg.jpg") repeat-x;
+    background-size: contain;
+}

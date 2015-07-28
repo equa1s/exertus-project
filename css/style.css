@@ -1,0 +1,130 @@
+@import "fonts/trajan_pro_bold.css";
+* {
+    margin: 0;
+    padding: 0;
+}
+.main {
+    width: 100%;
+    height: 100%;
+}
+body {
+    background: #000 url("../img/bg2.jpg") no-repeat fixed center top;
+    background-size: cover;
+    font-family: "Trajan Pro Bold", serif;
+}
+.menu ul li {
+    display: inline;
+    list-style: none;
+    margin: 25px;
+}
+.menu {
+    width: 100%;
+    font-size: 24px;
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.72);
+    position: fixed;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    z-index: 9999;
+}
+.menu ul {
+    text-align: center;
+}
+a {
+    text-decoration: none;
+    color: #9a9b89;
+}
+
+a:visited {
+    color: #9a9b89;
+}
+
+a:hover {
+    color: #eaebcf;
+}
+a:active {
+    color: #fff;
+}
+.sign-in p, .status p {
+    font-size: 24px;
+    text-shadow: 2px 2px #83807c;
+    text-align: center;
+}
+.sign-in p {
+    color: #bab894;
+}
+.status p {
+    color: red;
+}
+.sign-in {
+    margin-top: 300px;
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    display: inline-block;
+}
+.status {
+    width: 130px;
+    height: 130px;
+    line-height: 130px;
+    display: block;
+}
+.status {
+    background: url("../img/on_off.png") no-repeat;
+    float: right;
+    margin-right: 200px;
+    margin-top: 300px;
+}
+.sign-in {
+    background: url("../img/sign_in.png") no-repeat;
+    float: left;
+    margin-left: 200px;
+}
+.top {
+    display: inline-block;
+    height: 940px;
+    width: 100%;
+}
+.content {
+    width: 100%;
+    height: 100%;
+}
+.statistics, .downloads, .about {
+    padding-top: 50px;
+    height: 550px;
+}
+.news {
+    padding-top: 50px;
+    height: 100%;
+    width: 100%;
+}
+.news {
+    background: url("../img/divs/news.png") no-repeat left;
+    background-size: contain;
+}
+.downloads {
+    background: url("../img/divs/elf_downloads.png") no-repeat right;
+    background-size: contain;
+}
+.about {
+    background: url("../img/divs/about.png") no-repeat right;
+    background-size: contain;
+    height: 100%;
+}
+.statistics {
+    background: url("../img/divs/statistics.png") no-repeat left;
+    margin-top: 50px;
+}
+.news-main, .statistics-main, .downloads-main, .about-main {
+    background-color: #36372e;
+    opacity: 0.7;
+    height: 100%;
+    width: 1100px;
+    border-radius: 10px;
+    border: 1px solid #bab894;
+    padding-left: 5px;
+    margin: 20px auto 0;
+}
+.container {
+    font-family: "Helvetica Neue Light", sans-serif;
+    font-size: 12px;
+}

@@ -1,0 +1,38 @@
+.statistic-main-block {
+    width: 100%;
+    height: 100%;
+}
+.statistic-inner-block {
+    width: 1100px;
+    padding: 5px;
+    background-color: #36372e;
+    opacity: 0.7;
+    border-radius: 10px;
+    border: 1px solid #bab894;
+    margin: 20px auto 0;
+}
+.statistic-pk, .statistic-pvp {
+    width: 500px;
+    height: 100%;
+    padding: 7px;
+    color: #d2bb38;
+    display: inline-block;
+}
+.statistic-pk table, .statistic-pvp table {
+    text-align: center;
+    margin: 0 auto;
+}
+.statistic-pvp caption {
+    color: #00ba00;
+}
+.statistic-pk caption {
+    color: red;
+}
+table tr td {
+    padding: 10px;
+    text-shadow: 1px 1px #695b49;
+}
+caption {
+    font-size: x-large;
+    text-shadow: 1px 1px #8c8a72;
+}

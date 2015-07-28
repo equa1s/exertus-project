@@ -1,0 +1,28 @@
+.latest-news-inner-block {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    padding: 5px;
+}
+.latest-news {
+    width: 500px;
+    height: 100%;
+    background-color: black;
+    display: inline-block;
+    margin: 10px;
+    word-wrap: break-word;
+    padding: 10px;
+    position: relative;
+    border-radius: 5px;
+}
+.title {
+    color: #eba600;
+    font-weight: bolder;
+}
+.author-time {
+    float: right;
+    color: white;
+}
+.news-body {
+    color: white;
+}
