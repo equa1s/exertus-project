@@ -1,6 +1,6 @@
 # Exertus-Project
 Site for game project Lineage 2
-# Site main funcs
+# Main functions of site
   - registration (mail verification)
   - news feed
   - personal office to manipulate a characters
