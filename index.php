@@ -1,4 +1,4 @@
-<?php include 'configurations/config.php'; ?>
+<?php include 'cfg/config.php'; ?>
 <!DOCTYPE html>
 <html>
 <head lang="en">
@@ -166,7 +166,7 @@
 
             <div class="sign-in">
                 <p>
-                    <a href="office" target="_blank">Sign-in</a>
+                    <a href="office">Sign-in</a>
                 </p>
             </div>
 
