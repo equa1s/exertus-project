@@ -1,6 +1,51 @@
 <?php
 
 include '../auth/lock.php';
+require '../cfg/Coordinates.php';
+require '../cfg/Town.php';
+
+$towns = array(
+    new Town("Gludio", new Coordinates(1, 2, 3)),
+    new Town("Giran", new Coordinates(4, 6, 2)),
+    new Town("Aden", new Coordinates(4, 2, 3)),
+    new Town("Schuttgart", new Coordinates(1, 2, 3)),
+    new Town("Rune", new Coordinates(1, 2, 3)),
+    new Town("Goddard", new Coordinates(1, 2, 3)),
+    new Town("Dion", new Coordinates(1, 2, 3)),
+    new Town("Oren", new Coordinates(1, 2, 3))
+);
+
+if(isset($_POST['submit'])) {
+    $r = '';
+    if(!empty($_POST['character']) AND isset($_POST['character'])) {
+        if(isset($_POST['town']) AND !empty($_POST['town'])){
+
+            $who = $_POST['character'];
+            $to = $_POST['town'];
+
+            foreach($towns as $value) {
+                if($value->getTitle() == $to) {
+                    $town = new Town($to, $value->getCoordinates());
+                }
+            }
+            $current_coords = $town->getCoordinates();
+
+            $sql = "UPDATE  `characters` SET  `x` =".$current_coords->getX().",
+                                              `y` = ".$current_coords->getY().",
+                                              `z` = ".$current_coords->getZ()."
+                    WHERE  `account_name` =  '".$login_session."'
+                            AND
+                           `char_name` =  '".$who."'";
+
+            $query = mysqli_query($conn, $sql);
+            if($query) {
+                $r = "Character ".$who." has been teleported to ".$to;
+            } else {
+                $r = "Error occurred!";
+            }
+        }
+    }
+}
 
 ?>
 <!DOCTYPE html>
@@ -16,6 +61,11 @@ include '../auth/lock.php';
     <caption>Office functions</caption>
     <tr>
         <td>
+            <a href="index.php">Main</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
             <a href="change.php">Change password</a>
         </td>
     </tr>
@@ -28,16 +78,13 @@ include '../auth/lock.php';
 <br>
 <div class="teleport">
     <p>Teleport to another town</p>
-    <?php
 
-    $sql = "SELECT char_name FROM characters WHERE account_name='".$login_session."'";
-    $result = mysqli_query($conn, $sql);
-
-    ?>
-
-    <form>
-        <select id="character" name="character">
+    <form method="post" action="relocate.php">
+        <select id="character" name="character" title="Character">
             <?php
+
+            $sql = "SELECT char_name FROM characters WHERE account_name='".$login_session."'";
+            $result = mysqli_query($conn, $sql);
 
             if(mysqli_num_rows($result) == 0) {
                 echo "<option value='null'>You have no characters</option>";
@@ -49,7 +96,7 @@ include '../auth/lock.php';
 
             ?>
         </select>
-        <select id="town" name="town">
+        <select id="town" name="town" title="Town">
             <option value="Gludio">Town of Gludio</option>
             <option value="Dion">Town of Dion</option>
             <option value="Heine">Heine</option>
@@ -60,7 +107,8 @@ include '../auth/lock.php';
             <option value="Rune">Rune Township</option>
             <option value="Schuttgart">Town of Schuttgart</option>
         </select>
-        <input type="button" value="Submit relocation">
+        <input type="submit" id="submit" name="submit" value="Submit relocation">
+        <p><?php echo $r ?></p>
     </form>
 </div>
 
