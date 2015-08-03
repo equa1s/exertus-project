@@ -1,6 +1,6 @@
 <?php
 
-include_once '../configurations/config.php';
+include_once '../cfg/config.php';
 
 // if email is set and not empty
 if(isset($_GET['email']) && !empty($_GET['email'])) {

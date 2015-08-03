@@ -1,6 +1,6 @@
 <?php
 
-include '../configurations/config.php';
+include '../cfg/config.php';
 
 if(isset($_POST['submit'])) {
     $error = '';
