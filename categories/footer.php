@@ -23,7 +23,6 @@
     .copy {
         margin: 0 auto;
         width: 270px;
-        padding-bottom: 10px;
     }
 </style>
 <div class="footer-in-inner">
