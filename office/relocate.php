@@ -26,6 +26,7 @@ if(isset($_POST['submit'])) {
             foreach($towns as $value) {
                 if($value->getTitle() == $to) {
                     $town = new Town($to, $value->getCoordinates());
+                    break;
                 }
             }
             $current_coords = $town->getCoordinates();
